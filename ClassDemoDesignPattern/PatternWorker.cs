@@ -25,7 +25,7 @@ namespace ClassDemoDesignPatterns
              */
             //DemoSingleton();
             //DemoFactoryMethod();
-            DemoAbstractFactory();
+            //DemoAbstractFactory();
 
 
             /*
@@ -33,7 +33,7 @@ namespace ClassDemoDesignPatterns
              */
             //DemoAdaptor();
             //DemoFacade();
-            //DemoProxy();
+            DemoProxy();
             //DemoDecorator();
             //DemoComposite();
 
@@ -91,7 +91,7 @@ namespace ClassDemoDesignPatterns
         private void DemoAdaptor()
         {
             IAdaptor adap = new Adaptor1();
-            string newstr = adap.Request("anders");
+            string newstr = adap.Request("peter");
             Console.WriteLine(newstr);
 
             IAdaptor adap2 = new Adaptor2();
