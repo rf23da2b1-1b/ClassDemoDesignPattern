@@ -33,7 +33,7 @@ namespace ClassDemoDesignPatterns
              */
             //DemoAdaptor();
             //DemoFacade();
-            DemoProxy();
+            //DemoProxy();
             //DemoDecorator();
             //DemoComposite();
 
@@ -42,7 +42,7 @@ namespace ClassDemoDesignPatterns
             /*
              * Demo Behavioral pattern
              */
-            //DemoObserver();
+            DemoObserver();
             //DemoTemplate();
             //DemoStrategy();
             //DemoState();
@@ -175,14 +175,14 @@ namespace ClassDemoDesignPatterns
         // Make Observer
         private void DemoObserver()
         {
-            /*
+            
             // I am observer
             ObservableObject obj = new ObservableObject(3, "text");
             obj.Text = "Peter"; // nothing happen
 
             obj.PropertyChanged += (sender, args) =>
             {
-                Console.WriteLine("Anonymuos Method " + args.PropertyName);
+                Console.WriteLine("Anonymuos Method " + args.PropertyName + " objekt værdier " + sender);
             };
             obj.Text = "Anders";
 
@@ -195,7 +195,7 @@ namespace ClassDemoDesignPatterns
             obj.PropertyChanged -= Update;
             obj.Id = 222;
 
-            */
+            
         }
 
         /*

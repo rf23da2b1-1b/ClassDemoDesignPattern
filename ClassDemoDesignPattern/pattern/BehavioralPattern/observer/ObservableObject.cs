@@ -3,12 +3,11 @@ using System.Runtime.CompilerServices;
 
 namespace ClassDemoDesignPatterns.pattern.BehavioralPattern.observer
 {
-    class ObservableObject
+    class ObservableObject:INotifyPropertyChanged
     {
         private int _id;
         private String _text;
 
-        
 
         public ObservableObject(int id, string text)
         {
@@ -27,6 +26,7 @@ namespace ClassDemoDesignPatterns.pattern.BehavioralPattern.observer
             {
                 if (value == _id) return;
                 _id = value;
+                Notify("Id");
             }
         }
 
@@ -37,10 +37,26 @@ namespace ClassDemoDesignPatterns.pattern.BehavioralPattern.observer
             {
                 if (value == _text) return;
                 _text = value;
+                Notify("Text");
             }
         }
 
-        
+
+        /*
+         * Observer
+         */
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+
+        public void Notify(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+
 
         public override string ToString()
         {
